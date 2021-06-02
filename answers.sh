@@ -7,7 +7,7 @@ UPDATE students SET points=(points+100) WHERE name="Basma";
 UPDATE students SET points=(points-1) WHERE name="Alex";
 
 
-# ///////////// Creating Table
+# ///////////// Creating Table \\\\\\\\\\\\\\
 CREATE TABLE "graduates" (
 "ID" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 "Name" TEXT NOT Null UNIQUE,
@@ -16,7 +16,7 @@ CREATE TABLE "graduates" (
 "Points" INTEGER,
 "Graduation" TEXT 
 );
-# /////////////// Copy Layal's data from students to graduates
+# /////////////// Copy data from students to graduates \\\\\\\\\\\\\\
 INSERT INTO  graduates (Id,Name,Age,Gender,Points)
 SELECT Id,Name,Age,Gender,Points FROM students WHERE name="Layal";
 UPDATE graduates SET Graduation = '08/09/2018' WHERE name="Layal";#/// ADD graduation date
@@ -39,5 +39,15 @@ FROM employees
 INNER JOIN companies ON employees.Company = companies.Name 
 WHERE employees.Role="Graphic Designer";
 
+# /////////// Count & Filter \\\\\\\\\\\\\\
+#1
+SELECT Name,MAX(Points) FROM students;
+#2
+SELECT AVG(Points) FROM students;
+#3
+SELECT * FROM students WHERE Points=500;
 #4
+SELECT Name FROM students WHERE name LIKE "%s%";
+#5
+SELECT Name,Points FROM students ORDER BY points DESC;
 
