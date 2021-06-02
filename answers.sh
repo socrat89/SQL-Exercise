@@ -24,4 +24,20 @@ DELETE FROM students WHERE name = "Layal"; #// Remove Layal's record from studen
 SELECT * FROM graduates;#// checking 
 SELECT * FROM students;#// checking 
 
+#/////////// Join \\\\\\\\\\\\\\
+#1
+SELECT employees.name, employees.Company, companies.Date
+FROM employees INNER JOIN companies ON employees.Company = companies.name;
+
+#2
+SELECT employees.Name FROM employees
+INNER JOIN companies ON employees.Company = companies.name AND Date<2000;
+
+#3
+SELECT companies.name
+FROM employees
+INNER JOIN companies ON employees.Company = companies.Name 
+WHERE employees.Role="Graphic Designer";
+
+4#
 
