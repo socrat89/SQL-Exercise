@@ -39,5 +39,5 @@ FROM employees
 INNER JOIN companies ON employees.Company = companies.Name 
 WHERE employees.Role="Graphic Designer";
 
-4#
+#4
 
